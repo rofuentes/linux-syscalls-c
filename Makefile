@@ -1,5 +1,5 @@
-greet-to-file:
-	gcc -o ~/bin/greet-to-file src/greet-to-file.c
+greet-with-errors:
+	gcc -o ~/bin/greet-with-errors src/greet-with-errors.c
 
 clean:
-	rm foo ~/bin/greet-to-file
+	rm foo ~/bin/greet-with-errors
