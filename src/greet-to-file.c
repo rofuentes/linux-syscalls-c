@@ -20,6 +20,7 @@ void main()
            values to names. Errno is only set if an error occurs.
         */
         printf("error number %d\n", errno);
+        /* Print given text and message corresponding to errno */
         perror("foo");
         exit(1);
     }
