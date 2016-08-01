@@ -1,0 +1,35 @@
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+struct record {
+    int id;
+    char name[80];
+};
+
+void main()
+{
+    int fd, size = sizeof(struct record);
+    struct record info;
+
+    fd = open("data", O_RDWR | O_CREAT | O_TRUNC, 0644);
+
+    /* First Record */
+    info.id = 10;
+    strcpy(info.name, "Ann");
+    write(fd, &info, size);
+
+    /* Second Record */
+    info.id = 20;
+    strcpy(info.name, "Bob");
+    write(fd, &info, size);
+
+    lseek(fd, size, SEEK_SET);
+    read(fd, &info, size);
+
+    /* Change second record id */
+    info.id = 99;
+    lseek(fd, -size, SEEK_CUR);
+    write(fd, &info, size);
+
+    close(fd);
+}
