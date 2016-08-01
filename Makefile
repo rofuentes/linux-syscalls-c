@@ -4,5 +4,8 @@ greet-with-errors:
 copy:
 	gcc -o ~/bin/copy src/copy.c
 
+copy-stdio:
+	gcc -o ~/bin/copy-stdio src/copy-stdio.c
+
 clean:
 	rm foo bar ~/bin/*
