@@ -7,5 +7,8 @@ copy:
 copy-stdio:
 	gcc -o ~/bin/copy-stdio src/copy-stdio.c
 
+random-access:
+	gcc -o ~/bin/random-access src/random-access.c
+
 clean:
-	rm foo bar ~/bin/*
+	rm foo bar data ~/bin/*
