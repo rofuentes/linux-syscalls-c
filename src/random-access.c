@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include <stdio.h>
 struct record {
     int id;
     char name[80];
@@ -17,11 +18,16 @@ void main()
     info.id = 10;
     strcpy(info.name, "Ann");
     write(fd, &info, size);
+    printf("%d", info.id);
+    printf(info.name);
 
     /* Second Record */
     info.id = 20;
     strcpy(info.name, "Bob");
     write(fd, &info, size);
+
+    printf("%d", info.id);
+    printf(info.name);
 
     lseek(fd, size, SEEK_SET);
     read(fd, &info, size);
