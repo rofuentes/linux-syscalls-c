@@ -18,16 +18,15 @@ void main()
     info.id = 10;
     strcpy(info.name, "Ann");
     write(fd, &info, size);
-    printf("%d", info.id);
-    printf(info.name);
+    printf("The first record is:\n");
+    printf("ID: %d\nName: %s\n", info.id, info.name);
 
     /* Second Record */
     info.id = 20;
     strcpy(info.name, "Bob");
     write(fd, &info, size);
-
-    printf("%d", info.id);
-    printf(info.name);
+    printf("The second record is:\n");
+    printf("ID: %d\nName: %s\n", info.id, info.name);
 
     lseek(fd, size, SEEK_SET);
     read(fd, &info, size);
@@ -36,6 +35,8 @@ void main()
     info.id = 99;
     lseek(fd, -size, SEEK_CUR);
     write(fd, &info, size);
+    printf("The modified second record is:\n");
+    printf("ID: %d\nName: %s\n", info.id, info.name);
 
     close(fd);
 }
