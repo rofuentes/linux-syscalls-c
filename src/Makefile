@@ -15,4 +15,4 @@ random-access:
 	$(CC) $(CFLAGS) -o ~/bin/random-access random-access.c
 
 clean:
-	rm foo bar data ~/bin/*
+	rm foo bar data
