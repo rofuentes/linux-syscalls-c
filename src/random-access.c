@@ -7,6 +7,10 @@ struct record {
     char name[80];
 };
 
+int print()
+{
+}
+
 void main()
 {
     int fd, size = sizeof(struct record);
